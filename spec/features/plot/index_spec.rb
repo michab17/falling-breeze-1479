@@ -25,7 +25,7 @@ RSpec.describe 'Plots index page' do
     PlotPlant.create!(plot_id: plot2.id, plant_id: plant3.id)
 
     visit plots_path
-
+    
     within "#id-#{plot1.id}" do
       expect(page).to have_content("cucumber")
       expect(page).to have_content("tomato")
