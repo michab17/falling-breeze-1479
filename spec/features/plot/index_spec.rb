@@ -7,7 +7,7 @@ RSpec.describe 'Plots index page' do
     plot2 = garden.plots.create!(number: 2, size: 'small', direction: 'east')
     plot3 = garden.plots.create!(number: 3, size: 'small', direction: 'east')
 
-    visit plot_index_path
+    visit plots_path
 
     expect("1").to appear_before("2") 
     expect("2").to appear_before("3") 
@@ -24,7 +24,7 @@ RSpec.describe 'Plots index page' do
     PlotPlant.create!(plot_id: plot1.id, plant_id: plant2.id)
     PlotPlant.create!(plot_id: plot2.id, plant_id: plant3.id)
 
-    visit plot_index_path
+    visit plots_path
 
     within "#id-#{plot1.id}" do
       expect(page).to have_content("cucumber")
