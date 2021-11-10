@@ -42,7 +42,7 @@ RSpec.describe 'Garden show page' do
     PlotPlant.create!(plot_id: plot2.id, plant_id: plant6.id)
 
     visit garden_path(garden.id)
-
-    expect('cucumber').to appear_before('tomato')
+    save_and_open_page
+    expect('tomato').to_not appear_before('cucumber')
   end
 end
