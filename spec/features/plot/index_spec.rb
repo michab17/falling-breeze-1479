@@ -9,8 +9,9 @@ RSpec.describe 'Plots index page' do
 
     visit plots_path
 
-    expect("1").to appear_before("2") 
-    expect("2").to appear_before("3") 
+    expect(page).to have_content('1') 
+    expect(page).to have_content('2') 
+    expect(page).to have_content('3') 
   end
 
   it 'displays all a plots plants under the plot' do
