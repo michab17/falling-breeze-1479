@@ -13,7 +13,7 @@ RSpec.describe 'Garden show page' do
     PlotPlant.create!(plot_id: plot1.id, plant_id: plant2.id)
     PlotPlant.create!(plot_id: plot2.id, plant_id: plant3.id)
 
-    visit garden_show_path
+    visit garden_path
 
     expect(page).to have_content('cucumber').once
     expect(page).to have_content('tomato').once
