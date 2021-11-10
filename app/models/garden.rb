@@ -3,7 +3,8 @@ class Garden < ApplicationRecord
 
   def plants
     plots.joins(:plants)
+        .select("DISTINCT plants.name, COUNT(plants.name) DESC")
         .where("plants.days_to_harvest < 100")
-        .select("DISTINCT plants.name")
+        .group("plants.name")
   end
 end
